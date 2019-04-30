@@ -10,20 +10,14 @@ if(Meteor.isServer) {
 }
 
 Meteor.methods({
-	greetUser(name) {
-		console.log('greetUser is running');
-
-		if (!name) {
-			throw new Meteor.Error('invalid-argument', 'Name is required!')
+	'links.insert'(url){
+		if(!this.userId) {
+			throw new Meteor.Error('not-authorised');
 		}
 
-		return `Hello ${name}!`;
-	},
-	addNumbers(num1, num2) {
-		if(typeof num1 === 'number' && typeof num2 === 'number') {
-			return num1 + num2;
-		} else {
-			throw new Meteor.Error('invalid-argument', 'Parameter is not a number.');
-		}
+		Links.insert({
+			url,
+			userId: this.userId
+		});
 	}
 });
