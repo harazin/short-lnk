@@ -1,15 +1,15 @@
 import React from 'react';
 
 import PrivateHeader from './PrivateHeader';
-import LinksList from '../ui/linksList';
+import LinksList from './LinksList';
 import AddLink from './AddLink';
 
 export default () => {
-	return (
-		<div>
-			<PrivateHeader title="Your Links" />
-			<LinksList />
-			<AddLink />
-		</div>
-	);
+  return (
+    <div>
+      <PrivateHeader title="Your Links"/>
+      <LinksList/>
+      <AddLink/>
+    </div>
+  );
 };
