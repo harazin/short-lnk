@@ -5,7 +5,7 @@ import { Accounts } from 'meteor/accounts-base';
 Accounts.validateNewUser((user) => {
   const email = user.emails[0].address;
 
-	new SimpleSchema({
+  new SimpleSchema({
     email: {
       type: String,
       regEx: SimpleSchema.RegEx.Email
